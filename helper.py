@@ -16,6 +16,16 @@ def logistic(x):
 def deriv_logistic(x):
     return logistic(x)*(1-logistic(x))
 
+def reLu(x):
+    x[x <= 0] = 0
+    return x
+
+def deriv_reLu(x):
+    x[x <= 0] = 0
+    x[x > 0] = 1
+    return x
+
+
 # x = np.arange(-100, 100, 1)
 #
 # plt.plot(x, logistic(x))
